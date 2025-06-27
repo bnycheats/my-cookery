@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Chocolate Sans";
+  src: url("./assets/fonts/ChocolateClassicalSans-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}

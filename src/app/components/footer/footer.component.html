@@ -1,0 +1,50 @@
+<footer class="bg-primary mt-20">
+  <div class="py-4 flex justify-center">
+    <button
+      class="flex cursor-pointer gap-2 items-center"
+      (click)="scrollToTop()"
+    >
+      <svg
+        class="w-6 h-6 text-gray-800 dark:text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m5 15 7-7 7 7"
+        />
+      </svg>
+      <span class="font-bold underline">Back to top </span>
+    </button>
+  </div>
+  <app-container
+    class="py-4 text-sm flex flex-col gap-3 items-center md:flex-row justify-between"
+  >
+    <span class="order-2 md:order-1"
+      >Copyright ©2025 bnycheats. All rights reserved.</span
+    >
+    <div class="flex items-center gap-2 order-1 md:order-2">
+      <span>Contact us</span>
+      <a href="https://www.facebook.com/share/1XeEZWxYQ1/" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="#000000"
+        >
+          <path
+            d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.096 4.388 23.092 10.125 24v-8.437H7.078V12.07h3.047V9.414c0-3.017 1.791-4.687 4.533-4.687 1.312 0 2.686.235 2.686.235v2.953H16.22c-1.49 0-1.953.927-1.953 1.875v2.28h3.328l-.532 3.493h-2.796V24C19.612 23.092 24 18.096 24 12.073z"
+          />
+        </svg>
+      </a>
+    </div>
+  </app-container>
+</footer>

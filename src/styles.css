@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@import "./font.css";
+
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@theme {
+  --font-display: "Chocolate Sans", "sans-serif";
+  --color-primary: oklch(0.67 0.22 25.27);
+}
+
+body {
+  @apply font-display;
+}
+
+.btn-primary {
+  @apply cursor-pointer bg-primary hover:bg-primary/80 text-white font-bold rounded-xl w-full block text-center py-2.5;
+}
+
+.btn-secondary {
+  @apply cursor-pointer bg-black hover:bg-black/80 text-white font-bold rounded-xl w-full block text-center py-2.5;
+}
+
+.btn-outline {
+  @apply cursor-pointer bg-transparent ring-2 font-bold rounded-xl w-full block text-center py-2.5;
+}
