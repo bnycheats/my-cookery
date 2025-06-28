@@ -1,0 +1,13 @@
+<section>
+  <app-container class="flex flex-col gap-7 md:gap-14">
+    <app-card-component
+      *ngFor="let card of cards"
+      [title]="card.title"
+      [desc]="card.desc"
+      [imageSrc]="card.imageSrc"
+      [btnLabel]="card.btnLabel"
+      [btnLink]="card.btnLink"
+      [bgColor]="card.bgColor"
+    />
+  </app-container>
+</section>

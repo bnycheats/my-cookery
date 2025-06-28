@@ -1,0 +1,22 @@
+<section
+  class="bg-[url(/assets/images/hero.jpg)] h-[calc(100vh-64px)] bg-cover bg-center"
+>
+  <app-container class="flex items-end relative h-full">
+    <div
+      class="md:absolute md:top-1/2 md:-translate-y-full text-white space-y-6 mb-20"
+    >
+      <h1
+        class="text-4xl md:text-6xl font-bold text-shadow-xl max-w-sm leading-11 md:leading-[70px]"
+      >
+        Welcome to MyCookery!
+      </h1>
+      <div class="max-w-sm space-y-6">
+        <p class="text-lg md:text-xl text-shadow-xl">
+          Food is the ingredient that binds us together. Every recipe tells a
+          story. Make it your own.
+        </p>
+        <a class="btn-primary" [routerLink]="'/' + pages.REGISTER">Join us!</a>
+      </div>
+    </div>
+  </app-container>
+</section>

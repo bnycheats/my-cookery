@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
 })
 export class CardComponent {
   @HostBinding('class') hostClass =
-    'relative h-[582px] w-full overflow-hidden rounded-3xl block flex items-end sm:justify-center md:odd:justify-start md:even:justify-end';
+    'relative group h-[582px] w-full overflow-hidden rounded-3xl block flex items-end sm:justify-center md:odd:justify-start md:even:justify-end';
 
   @Input() title: string = '';
   @Input() desc: string = '';
