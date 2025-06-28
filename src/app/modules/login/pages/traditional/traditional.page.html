@@ -1,1 +1,70 @@
-<app-container>Login</app-container>
+<app-container class="py-20">
+  <div class="flex gap-6">
+    <div class="flex-1 relative mr-30 space-y-8">
+      <div class="space-y-2">
+        <h1 class="text-6xl font-bold">Hey there!</h1>
+        <span class="text-2xl font-bold">Log in</span>
+      </div>
+      <form class="mt-10 space-y-6" [formGroup]="loginForm">
+        <app-input
+          fieldType="email"
+          label="Email"
+          [formControl]="loginForm.controls.email"
+        />
+
+        <app-input
+          fieldType="password"
+          label="Password"
+          [formControl]="loginForm.controls.password"
+        />
+
+        <div class="flex items-start mb-5">
+          <div class="flex items-center h-5">
+            <input
+              id="remember"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+              required
+            />
+          </div>
+          <label
+            for="remember"
+            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Remember me</label
+          >
+        </div>
+        <button type="submit" class="btn-secondary mt-10">Log In</button>
+      </form>
+      <div class="inline-flex items-center justify-center w-full">
+        <hr class="w-full h-px bg-gray-200 border-0 dark:bg-gray-700" />
+        <span
+          class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900"
+          >or</span
+        >
+      </div>
+      <div class="flex gap-6 justify-center">
+        <app-social-button-component
+          iconSrc="assets/svg/facebook.svg"
+          iconClass="bg-[#1877F2]"
+          iconAlt="Facebook"
+        />
+        <app-social-button-component
+          iconSrc="assets/svg/google.svg"
+          iconClass="bg-white"
+          iconAlt="Google"
+        />
+      </div>
+      <div class="space-y-6">
+        <h1 class="text-6xl font-bold">Want to join?</h1>
+        <span class="text-gray-600"
+          >No need for a manual, just a few clicks and you are in!</span
+        >
+      </div>
+      <button class="btn-outline">Let's go!</button>
+    </div>
+    <div
+      class="flex-1 sticky top-24 h-[600px] bg-[url(assets/images/food-collage.jpg)] bg-contain bg-no-repeat bg-center"
+    ></div>
+  </div>
+</app-container>

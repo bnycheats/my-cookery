@@ -1,0 +1,28 @@
+<ng-container>
+  <div [formGroup]="form">
+    <input
+      class="form-control font-light text-sm h-[46px]"
+      maxlength="50"
+      [type]="passwordVisible ? 'text' : 'password'"
+      [formControlName]="formControlName"
+      [ngClass]="{ 'ring-red-500 ring-1': isInvalid || isControlInvalid() }"
+      (blur)="blurEvent.emit($event)"
+      (input)="inputChangeEvent.emit($event)"
+    />
+
+    <div class="input-group-append">
+      <fa-icon
+        class="input-group-text"
+        *ngIf="passwordVisible"
+        (click)="toggleEye()"
+        [icon]="['fas', 'eye-slash']"
+      ></fa-icon>
+      <fa-icon
+        class="input-group-text"
+        *ngIf="!passwordVisible"
+        (click)="toggleEye()"
+        [icon]="['fas', 'eye']"
+      ></fa-icon>
+    </div>
+  </div>
+</ng-container>

@@ -6,15 +6,7 @@
   ]"
 >
   <app-container class="py-4 flex items-center gap-8 justify-between">
-    <a
-      [routerLink]="'/' + pages.HOME"
-      [ngClass]="[
-        'text-lg sm:text-xl md:text-2xl',
-        openDrawer ? 'text-current' : 'text-white'
-      ]"
-    >
-      <span>My</span><span class="font-bold underline">Cookery</span>
-    </a>
+    <app-logo [logoClass]="openDrawer ? 'text-current' : 'text-white'" />
     <ul class="hidden sm:flex gap-8 w-full max-w-xl">
       <li
         class="text-white font-semibold text-xl relative group"
@@ -49,7 +41,8 @@
       </a>
       <button (click)="onToggleDrawer()" class="sm:hidden">
         <svg
-          [ngClass]="['text-white w-7 h-7', openDrawer ? 'hidden' : 'block']"
+          *ngIf="!openDrawer"
+          class="text-white w-7 h-7"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -61,7 +54,7 @@
           <rect x="3" y="16" width="18" height="2" fill="currentColor" />
         </svg>
         <svg
-          [ngClass]="['w-6 h-6 text-black', openDrawer ? 'block' : 'hidden']"
+          *ngIf="openDrawer"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
