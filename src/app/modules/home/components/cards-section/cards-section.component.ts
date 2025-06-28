@@ -18,7 +18,7 @@ export class CardsSectionComponent {
     },
     {
       title: 'Create your own cookbook',
-      desc: 'Find, create, upload and organise your favourite recipes, all in one place.',
+      desc: 'Discover, create, and organize your favorite recipes — all in one beautifully simple space designed just for you.',
       imageSrc: 'assets/images/card-bg-2.jpg',
       btnLink: '/' + PAGES.COOKBOOK,
       btnLabel: 'Get started',
