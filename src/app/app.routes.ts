@@ -12,15 +12,7 @@ export const routes: Routes = [
     path: '',
     component: MainLayout,
     loadChildren: () =>
-      import('./modules/login/login.module').then((m) => m.LoginModule),
-  },
-  {
-    path: PAGES.REGISTER,
-    component: MainLayout,
-    loadChildren: () =>
-      import('./modules/register/register.module').then(
-        (m) => m.RegisterModule
-      ),
+      import('./modules/auth/auth.modules').then((m) => m.AuthModule),
   },
   {
     path: PAGES.HOME,
