@@ -6,7 +6,11 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   standalone: false,
@@ -23,6 +27,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputField implements ControlValueAccessor {
   @HostBinding('class') hostClass = 'block';
 
+  @Input() control!: AbstractControl | null;
+  @Input() submitted = false;
   @Input() label: string = '';
   @Input() fieldType: string = 'text';
   @Input() placeholder: string = '';

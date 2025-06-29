@@ -15,6 +15,11 @@
       (input)="onInput($event)"
       (blur)="onBlur($event)"
       class="border border-black text-black text-md rounded-lg focus:ring-black focus:border-black block w-full p-2.5"
+      [ngClass]="
+        control && control.invalid && (control.touched || submitted)
+          ? 'border-red-500 border focus:ring-red-500 focus:border-red-500'
+          : ''
+      "
     />
     <button
       *ngIf="fieldType === 'password' && showToggle"

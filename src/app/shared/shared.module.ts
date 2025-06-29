@@ -5,8 +5,9 @@ import { Logo } from './components/logo/logo.component';
 import { RouterLink } from '@angular/router';
 import { InputField } from './components/input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Validate } from './components/validate/validate.component';
 
-const SHARED_COMPONENTS = [Container, Logo, InputField];
+const SHARED_COMPONENTS = [Container, Logo, InputField, Validate];
 
 @NgModule({
   declarations: [...SHARED_COMPONENTS],

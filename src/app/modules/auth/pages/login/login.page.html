@@ -5,32 +5,52 @@
         <h1 class="text-4xl md:text-6xl font-bold">Hey there!</h1>
         <span class="text-2xl font-bold">Log in</span>
       </div>
-      <form class="mt-10 space-y-6" [formGroup]="loginForm">
-        <app-input
-          placeholder="Enter your email"
-          fieldType="email"
-          label="Email"
-          [formControl]="loginForm.controls.email"
-        />
-        <app-input
-          placeholder="Enter your password"
-          fieldType="password"
-          label="Password"
-          [formControl]="loginForm.controls.password"
-        />
+      <form
+        class="mt-10 space-y-6"
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div>
+          <app-input
+            [control]="f.email"
+            [submitted]="submitted"
+            placeholder="Enter your email"
+            fieldType="email"
+            label="Email"
+            [formControl]="loginForm.controls.email"
+          />
+          <app-validate
+            [control]="f.email"
+            [submitted]="submitted"
+            fieldName="Email"
+          />
+        </div>
+        <div>
+          <app-input
+            [control]="f.email"
+            [submitted]="submitted"
+            placeholder="Enter your password"
+            fieldType="password"
+            label="Password"
+            [formControl]="loginForm.controls.password"
+          />
+          <app-validate
+            [control]="f.password"
+            [submitted]="submitted"
+            fieldName="Password"
+          />
+        </div>
         <div class="flex items-start mb-5">
           <div class="flex items-center h-5">
             <input
               id="remember"
               type="checkbox"
               value=""
-              class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+              class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300"
               required
             />
           </div>
-          <label
-            for="remember"
-            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          <label for="remember" class="ms-2 text-sm font-medium text-gray-900"
             >Remember me</label
           >
         </div>
