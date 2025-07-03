@@ -5,6 +5,6 @@ import { Component, HostBinding } from '@angular/core';
   selector: 'app-container',
   templateUrl: './container.component.html',
 })
-export class Container {
+export class ContainerComponent {
   @HostBinding('class') hostClass = 'max-w-7xl px-6 mx-auto block';
 }

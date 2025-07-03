@@ -6,7 +6,7 @@ import { AbstractControl } from '@angular/forms';
   selector: 'app-validate',
   templateUrl: './validate.component.html',
 })
-export class Validate {
+export class ValidateComponent {
   @Input() control!: AbstractControl | null;
   @Input() submitted = false;
   @Input() fieldName = 'This field';
@@ -21,7 +21,7 @@ export class Validate {
       messages.push(`${this.fieldName} is required.`);
     }
     if (errors['email']) {
-      messages.push(`Please enter a valid email.`);
+      messages.push('Please enter a valid email.');
     }
     if (errors['minlength']) {
       messages.push(
@@ -29,7 +29,10 @@ export class Validate {
       );
     }
     if (errors['weakPassword']) {
-      messages.push(`Password is not strong enough.`);
+      messages.push('Password is not strong enough.');
+    }
+    if (errors['passwordMismatch']) {
+      messages.push('Passwords do not match.');
     }
 
     return messages;

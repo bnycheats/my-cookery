@@ -1,5 +1,6 @@
-<div class="space-y-7 md:space-y-16">
-  <app-hero-section class="block" />
-  <app-cards-section class="block" />
-  <app-join-us-section class="block" />
-</div>
+<ng-container *ngIf="isAuthenticated; else noAuth">
+  <app-protected-home-page></app-protected-home-page>
+</ng-container>
+<ng-template #noAuth>
+  <app-no-auth-home-page></app-no-auth-home-page>
+</ng-template>

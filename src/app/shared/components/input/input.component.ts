@@ -19,12 +19,12 @@ import {
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputField),
+      useExisting: forwardRef(() => InputFieldComponent),
       multi: true,
     },
   ],
 })
-export class InputField implements ControlValueAccessor {
+export class InputFieldComponent implements ControlValueAccessor {
   @HostBinding('class') hostClass = 'block';
 
   @Input() control!: AbstractControl | null;
@@ -53,6 +53,14 @@ export class InputField implements ControlValueAccessor {
     return this.fieldType === 'password' && this.passwordVisible
       ? 'text'
       : this.fieldType;
+  }
+
+  get isInvalid(): boolean {
+    return !!(
+      this.control &&
+      this.control.invalid &&
+      (this.control.touched || this.submitted)
+    );
   }
 
   writeValue(value: string): void {

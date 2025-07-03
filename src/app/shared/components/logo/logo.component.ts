@@ -6,7 +6,7 @@ import { PAGES } from '../../../contants/routes';
   selector: 'app-logo',
   templateUrl: './logo.component.html',
 })
-export class Logo {
+export class LogoComponent {
   pages = PAGES;
 
   @Input() logoClass: string = '';

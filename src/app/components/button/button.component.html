@@ -1,0 +1,14 @@
+<button
+  class="flex justify-center items-center gap-2"
+  [ngClass]="[
+    variant === 'primary' ? 'btn-primary' : '',
+    variant === 'outline' ? 'btn-outline' : '',
+    variant === 'secondary' ? 'btn-secondary' : '',
+    customClass
+  ]"
+  [disabled]="disabled"
+  (click)="onButtonClick()"
+>
+  <app-spinner customClass="!h-5 !w-5" *ngIf="showLoader" />
+  <span *ngIf="text">{{ text }}</span>
+</button>

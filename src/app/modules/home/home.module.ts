@@ -7,10 +7,14 @@ import { CardComponent } from './components/card/card.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { CardsSectionComponent } from './components/cards-section/cards-section.component';
 import { JoinUsSectionComponent } from './components/join-us-section/join-us-section.component';
+import { NoAuthHomePage } from './components/not-auth-home/no-auth-home.page';
+import { ProtectedHomePage } from './components/protected-home/protected-home.page';
 
 @NgModule({
   declarations: [
     HomePage,
+    NoAuthHomePage,
+    ProtectedHomePage,
     HeroSectionComponent,
     CardsSectionComponent,
     JoinUsSectionComponent,

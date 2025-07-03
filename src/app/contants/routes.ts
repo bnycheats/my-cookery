@@ -4,4 +4,5 @@ export const PAGES = {
   LOGIN: 'login',
   COOKBOOK: 'cookbook',
   RECIPES: 'recipes',
+  PROFILE: 'profile',
 } as const;

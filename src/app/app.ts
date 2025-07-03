@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SharedModule],
+  imports: [RouterOutlet, SharedModule, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

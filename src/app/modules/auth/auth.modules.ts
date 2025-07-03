@@ -7,10 +7,12 @@ import { LoginPage } from './pages/login/login.page';
 import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterPage } from './pages/register/register.page';
 import { SeparatorOrComponent } from './components/separator-or/seperator-or.component';
+import { ButtonComponent } from '../../components/button/button.component';
 
 @NgModule({
   declarations: [LoginPage, RegisterPage],
   imports: [
+    ButtonComponent,
     SeparatorOrComponent,
     SocialLoginComponent,
     ReactiveFormsModule,

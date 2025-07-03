@@ -1,13 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { Container } from './components/container/container.component';
-import { Logo } from './components/logo/logo.component';
+import { ContainerComponent } from './components/container/container.component';
+import { LogoComponent } from './components/logo/logo.component';
 import { RouterLink } from '@angular/router';
-import { InputField } from './components/input/input.component';
+import { InputFieldComponent } from './components/input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Validate } from './components/validate/validate.component';
+import { ValidateComponent } from './components/validate/validate.component';
 
-const SHARED_COMPONENTS = [Container, Logo, InputField, Validate];
+const SHARED_COMPONENTS = [
+  ContainerComponent,
+  LogoComponent,
+  InputFieldComponent,
+  ValidateComponent,
+];
 
 @NgModule({
   declarations: [...SHARED_COMPONENTS],

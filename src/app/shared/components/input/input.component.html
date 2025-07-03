@@ -14,9 +14,9 @@
       [disabled]="disabled"
       (input)="onInput($event)"
       (blur)="onBlur($event)"
-      class="border border-black text-black text-md rounded-lg focus:ring-black focus:border-black block w-full p-2.5"
+      class="border border-black text-black text-md rounded-lg focus:ring-black focus:border-black block w-full py-3"
       [ngClass]="
-        control && control.invalid && (control.touched || submitted)
+        isInvalid
           ? 'border-red-500 border focus:ring-red-500 focus:border-red-500'
           : ''
       "

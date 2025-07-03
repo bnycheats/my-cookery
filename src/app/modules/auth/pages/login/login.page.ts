@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PAGES } from '../../../../contants/routes';
+import { AuthService } from '../../../../core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: false,
@@ -10,6 +12,10 @@ import { PAGES } from '../../../../contants/routes';
 export class LoginPage {
   pages = PAGES;
   submitted = false;
+  error = '';
+  loading: boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -20,12 +26,29 @@ export class LoginPage {
     return this.loginForm.controls;
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
 
     if (this.loginForm.valid) {
+      this.loading = true;
       console.log('Form Submitted!', this.loginForm.value);
-      // Proceed with API call or further logic
+
+      try {
+        const { error } = await this.authService.signIn(
+          this.loginForm.controls.email.value ?? '',
+          this.loginForm.controls.password.value ?? ''
+        );
+
+        if (error) {
+          this.error = error.message;
+        } else {
+          this.router.navigate(['/' + PAGES.RECIPES]);
+        }
+      } catch (err) {
+        this.error = 'Unexpected error occurred';
+      } finally {
+        this.loading = false;
+      }
     } else {
       console.log('Form Invalid');
     }

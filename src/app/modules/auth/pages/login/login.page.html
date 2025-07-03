@@ -5,56 +5,50 @@
         <h1 class="text-4xl md:text-6xl font-bold">Hey there!</h1>
         <span class="text-2xl font-bold">Log in</span>
       </div>
-      <form
-        class="mt-10 space-y-6"
-        [formGroup]="loginForm"
-        (ngSubmit)="onSubmit()"
-      >
-        <div>
-          <app-input
-            [control]="f.email"
-            [submitted]="submitted"
-            placeholder="Enter your email"
-            fieldType="email"
-            label="Email"
-            [formControl]="loginForm.controls.email"
-          />
-          <app-validate
-            [control]="f.email"
-            [submitted]="submitted"
-            fieldName="Email"
-          />
-        </div>
-        <div>
-          <app-input
-            [control]="f.email"
-            [submitted]="submitted"
-            placeholder="Enter your password"
-            fieldType="password"
-            label="Password"
-            [formControl]="loginForm.controls.password"
-          />
-          <app-validate
-            [control]="f.password"
-            [submitted]="submitted"
-            fieldName="Password"
-          />
-        </div>
-        <div class="flex items-start mb-5">
-          <div class="flex items-center h-5">
-            <input
-              id="remember"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300"
-              required
+
+      <form class="mt-10" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <fieldset class="space-y-6" [disabled]="loading">
+          <div>
+            <app-input
+              [control]="f.email"
+              [submitted]="submitted"
+              placeholder="Enter your email"
+              fieldType="email"
+              label="Email"
+              [formControl]="loginForm.controls.email"
+            />
+            <app-validate
+              [control]="f.email"
+              [submitted]="submitted"
+              fieldName="Email"
             />
           </div>
-          <label for="remember" class="ms-2 text-sm font-medium text-gray-900"
-            >Remember me</label
+          <div>
+            <app-input
+              [control]="f.password"
+              [submitted]="submitted"
+              placeholder="Enter your password"
+              fieldType="password"
+              label="Password"
+              [formControl]="loginForm.controls.password"
+            />
+            <app-validate
+              [control]="f.password"
+              [submitted]="submitted"
+              fieldName="Password"
+            />
+          </div>
+          <app-button
+            customClass="mt-10"
+            type="submit"
+            variant="secondary"
+            text="Log In"
+            [showLoader]="loading"
+          />
+          <span class="text-red-700 text-sm mt-8 block" *ngIf="error"
+            >{{error}}</span
           >
-        </div>
-        <button type="submit" class="btn-secondary mt-10">Log In</button>
+        </fieldset>
       </form>
       <app-separator-or-component />
       <div class="flex gap-6 justify-center">
@@ -75,9 +69,11 @@
           >No need for a manual, just a few clicks and you are in!</span
         >
       </div>
-      <button [routerLink]="'/' + pages.REGISTER" class="btn-outline">
-        Let's go!
-      </button>
+      <app-button
+        [routerLink]="'/' + pages.REGISTER"
+        variant="outline"
+        text="Let's go!"
+      />
     </div>
     <div
       class="flex-1 sticky top-24 h-[600px] bg-[url(assets/images/food-collage.jpg)] bg-contain bg-no-repeat bg-left"

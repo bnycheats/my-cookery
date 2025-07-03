@@ -15,34 +15,98 @@
         />
       </div>
       <app-separator-or-component />
-      <form class="mt-10 space-y-6" [formGroup]="registerForm">
-        <app-input
-          placeholder="Your name"
-          label="Name"
-          [formControl]="registerForm.controls.firstname"
-        />
-        <app-input
-          placeholder="Your last name"
-          label="Last name"
-          [formControl]="registerForm.controls.lastname"
-        />
-        <app-input
-          placeholder="Enter your email"
-          fieldType="email"
-          label="Email"
-          [formControl]="registerForm.controls.email"
-        />
-        <app-input
-          placeholder="Your phone number"
-          label="Phone Number"
-          [formControl]="registerForm.controls.phone_no"
-        />
-        <app-input
-          placeholder="Enter your password"
-          fieldType="password"
-          label="Password"
-          [formControl]="registerForm.controls.password"
-        />
+      <form
+        class="mt-10 space-y-6"
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div>
+          <app-input
+            [control]="f.firstname"
+            [submitted]="submitted"
+            placeholder="Your name"
+            label="Name"
+            [formControl]="registerForm.controls.firstname"
+          />
+          <app-validate
+            [control]="f.firstname"
+            [submitted]="submitted"
+            fieldName="Name"
+          />
+        </div>
+        <div>
+          <app-input
+            [control]="f.lastname"
+            [submitted]="submitted"
+            placeholder="Your last name"
+            label="Last name"
+            [formControl]="registerForm.controls.lastname"
+          />
+          <app-validate
+            [control]="f.lastname"
+            [submitted]="submitted"
+            fieldName="Last name"
+          />
+        </div>
+        <div>
+          <app-input
+            [control]="f.email"
+            [submitted]="submitted"
+            placeholder="Enter your email"
+            fieldType="email"
+            label="Email"
+            [formControl]="registerForm.controls.email"
+          />
+          <app-validate
+            [control]="f.email"
+            [submitted]="submitted"
+            fieldName="Email"
+          />
+        </div>
+        <div>
+          <app-input
+            [control]="f.phone_no"
+            [submitted]="submitted"
+            placeholder="Your phone number"
+            label="Phone number"
+            [formControl]="registerForm.controls.phone_no"
+          />
+          <app-validate
+            [control]="f.phone_no"
+            [submitted]="submitted"
+            fieldName="Phone number"
+          />
+        </div>
+        <div>
+          <app-input
+            [control]="f.password"
+            [submitted]="submitted"
+            placeholder="Enter your password"
+            fieldType="password"
+            label="Password"
+            [formControl]="registerForm.controls.password"
+          />
+          <app-validate
+            [control]="f.password"
+            [submitted]="submitted"
+            fieldName="Password"
+          />
+        </div>
+        <div>
+          <app-input
+            [control]="f.confirmPassword"
+            [submitted]="submitted"
+            placeholder="Confirm your password"
+            fieldType="password"
+            label="Confirm password"
+            [formControl]="registerForm.controls.confirmPassword"
+          />
+          <app-validate
+            [control]="f.confirmPassword"
+            [submitted]="submitted"
+            fieldName="Confirm password"
+          />
+        </div>
         <button type="submit" class="btn-secondary mt-10">Submit</button>
       </form>
       <div

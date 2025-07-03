@@ -20,6 +20,15 @@
     </ul>
     <div class="flex gap-4 items-center">
       <a
+        *ngIf="isAuthenticated && !loading"
+        class="w-8 h-8 flex items-center capitalize justify-center bg-green-500 text-white text-sm font-bold rounded-full shadow"
+        [ngClass]="openDrawer ? 'invisible' : 'visible'"
+        [routerLink]="'/' + pages.PROFILE"
+      >
+        {{ avatarName }}
+      </a>
+      <a
+        *ngIf="!isAuthenticated && !loading"
         [ngClass]="openDrawer ? 'invisible' : 'visible'"
         [routerLink]="'/' + pages.LOGIN"
       >
